@@ -70,7 +70,9 @@ Before running the application, you need to have the following installed on your
 
    ```bash
    node index.js
+   ```
    or
+   ```bash
    npm run serve
    ```
    To keep the server running,
