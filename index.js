@@ -1,5 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
+require('dotenv').config();
+const mongoURI = process.env.MONGODB_URI;
 const Product = require("./models/product.model.js")
 const app = express();
 const productRoute = require("./routes/product.route.js")
@@ -21,8 +23,7 @@ app.get("/", function (req, res) {
 
 mongoose
   .connect(
-    "mongodb+srv://ayshamohd01:1t9QhKRziTbTIY9z@backenddemodb.j98gp2v.mongodb.net/Node-API?retryWrites=true&w=majority&appName=BackendDemoDB"
-  )
+    mongoURI  )
   .then(() => {
     console.log("Connected!");
     app.listen(3001, () => {
